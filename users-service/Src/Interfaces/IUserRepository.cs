@@ -12,30 +12,30 @@ namespace users_service.Src.Interfaces
         /// </summary>
         /// <param name="createUserDto">Datos necesarios para crear el usuario</param>
         /// <returns>Retorna el usuario creado</returns>
-        Task<UserDto> CreateUserAsync(CreateUserDto createUserDto);
+        UserDto CreateUser(CreateUserDto createUserDto);
         /// <summary>
         /// Metodo para obtener los usuarios
         /// </summary>
         /// <returns>Retorna los usuarios</returns>
-        Task<List<UserDto>> GetUsersAsync();
+        List<UserDto> GetUsers();
         /// <summary>
         /// Metodo para obtener un usuario
         /// </summary>
         /// <param name="userId">Id del usuario</param>
         /// <returns>Retorna los datos del usuario</returns>
-        Task<UserDto> GetUserByIdAsync(string userId);
+        UserDto GetUserById(string userId);
         /// <summary>
         /// Metodo para editar el usuario
         /// </summary>
         /// <param name="userId">Id del usuario</param>
         /// <param name="requestEditUserDto">Datos necesarios para editar el usuario</param>
         /// <returns>Retorna el usuario editado</returns>
-        Task<UserDto> EditUserAsync(string userId, RequestEditUserDto requestEditUserDto);
+        UserDto EditUser(string userId, RequestEditUserDto requestEditUserDto);
         /// <summary>
         /// Metodo para eliminar un usuario
         /// </summary>
         /// <param name="userId">Id del usuario</param>
         /// <returns>Retorna el usuario eliminado</returns>
-        Task<UserDto> DeleteUserAsync(string userId);
+        UserDto DeleteUser(string userId);
     }
 }

@@ -31,14 +31,14 @@ namespace users_service.Src.Controllers
         /// <param name="createUserDto">Datos necesarios para crear el usuario</param>
         /// <returns>Retorna usuario creado</returns>
         [HttpPost("/createUser")]
-        public async Task<IActionResult> CreateUser([FromBody] CreateUserDto createUserDto)
+        public IActionResult CreateUser([FromBody] CreateUserDto createUserDto)
         {
             // Validacion: Modelo invalido
             if(!ModelState.IsValid) return BadRequest(ModelState);
 
             try
             {
-                var user = await _userRepository.CreateUserAsync(createUserDto);
+                var user = _userRepository.CreateUser(createUserDto);
                 return Ok(user);
             }
             catch (Exception ex)
@@ -52,11 +52,11 @@ namespace users_service.Src.Controllers
         /// </summary>
         /// <returns>Retorna los usuarios activos</returns>
         [HttpGet("/getUsers")]
-        public async Task<IActionResult> GetUsers()
+        public IActionResult GetUsers()
         {
             try
             {
-                var users = await _userRepository.GetUsersAsync();
+                var users = _userRepository.GetUsers();
                 return Ok(users);
             }
             catch(Exception ex)
@@ -71,11 +71,11 @@ namespace users_service.Src.Controllers
         /// <param name="userId">Id del usuario</param>
         /// <returns>Retorna el usuario</returns>
         [HttpGet("/getUserById/{userId}")]
-        public async Task<IActionResult> GetUserById([FromRoute] string userId)
+        public IActionResult GetUserById([FromRoute] string userId)
         {
             try
             {
-                var user = await _userRepository.GetUserByIdAsync(userId);
+                var user = _userRepository.GetUserById(userId);
                 return Ok(user);
             }
             catch(Exception ex)
@@ -91,14 +91,14 @@ namespace users_service.Src.Controllers
         /// <param name="requestEditUserDto">Datos necesarios para editar el usuario</param>
         /// <returns>Retorna el usuario editado</returns>
         [HttpPut("/editUser/{userId}")]
-        public async Task<IActionResult> EditUser([FromRoute] string userId, [FromBody] RequestEditUserDto requestEditUserDto)
+        public IActionResult EditUser([FromRoute] string userId, [FromBody] RequestEditUserDto requestEditUserDto)
         {
             // Validacion: Modelo invalido
             if(!ModelState.IsValid) return BadRequest(ModelState);
 
             try
             {
-                var user = await _userRepository.EditUserAsync(userId, requestEditUserDto);
+                var user = _userRepository.EditUser(userId, requestEditUserDto);
                 return Ok(user);
             }
             catch(Exception ex)
@@ -108,16 +108,16 @@ namespace users_service.Src.Controllers
         }
 
         /// <summary>
-        /// Endpoint para eliminar un usuario
+        /// Endpoint para eliminar usuario
         /// </summary>
         /// <param name="userId">Id del usuario</param>
-        /// <returns>Retorna el usuario eliminado</returns>
+        /// <returns>Retorna usuario eliminado</returns>
         [HttpDelete("/deleteUser/{userId}")]
-        public async Task<IActionResult> DeleteUser([FromRoute] string userId)
+        public IActionResult DeleteUser([FromRoute] string userId)
         {
             try
             {
-                var user = await _userRepository.DeleteUserAsync(userId);
+                var user = _userRepository.DeleteUser(userId);
                 return Ok(user);
             }
             catch(Exception ex)
