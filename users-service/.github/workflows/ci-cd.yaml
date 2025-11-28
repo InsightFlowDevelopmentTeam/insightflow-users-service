@@ -10,6 +10,9 @@ jobs:
   ci-cd:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -25,6 +28,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: "{{defaultContext}}"
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/users-service:latest , ${{ secrets.DOCKERHUB_USERNAME }}/users-service:${{ github.sha }}
