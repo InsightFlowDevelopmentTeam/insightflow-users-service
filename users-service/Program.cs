@@ -6,6 +6,9 @@ using users_service.Src.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
+/// <summary>
+/// Configuracion de swagger
+/// </summary>
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
@@ -29,12 +32,8 @@ var app = builder.Build();
 var context = app.Services.GetRequiredService<UserDataContext>();
 UserSeeder.Seed(context);
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
