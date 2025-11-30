@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using users_service.Src.Data;
 using users_service.Src.DTOs;
+using users_service.Src.Exceptions;
 using users_service.Src.Interfaces;
 using users_service.Src.Mappers;
 using users_service.Src.Models;
@@ -35,31 +36,31 @@ namespace users_service.Src.Repositories
             // Validacion: Nombre de usuario ya registrado.
             if (users.Any(u => u.FullName == createUserDto.FullName) == true)
             {
-                throw new Exception("Este nombre ya esta registrado");
+                throw new ConflictException("Este nombre ya esta registrado");
             }
 
             // Validacion: Correo electronico del usuario ya registrado.
             if (users.Any(u => u.Email == createUserDto.Email) == true)
             {
-                throw new Exception("Este correo electrónico ya esta registrado");
+                throw new ConflictException("Este correo electrónico ya esta registrado");
             }
 
             // Validacion: Apodo de usuario ya registrado.
             if (users.Any(u => u.NickName == createUserDto.NickName) == true)
             {
-                throw new Exception("Este apodo ya esta registrado");
+                throw new ConflictException("Este apodo ya esta registrado");
             }
 
             // Validacion: Fecha de nacimiento superior a la fecha actual.
             if (createUserDto.BirthDate > DateTime.UtcNow)
             {
-                throw new Exception("La fecha de nacimiento es superior a la fecha actual");
+                throw new BadRequestException("La fecha de nacimiento es superior a la fecha actual");
             }
 
             // Validacion: Numero de telefono ya registrado.
             if (users.Any(u => u.PhoneNumber == createUserDto.PhoneNumber) == true)
             {
-                throw new Exception("Este número de teléfono ya esta registrado");
+                throw new ConflictException("Este número de teléfono ya esta registrado");
             }
 
             // Se crea el nuevo usuario
@@ -99,7 +100,7 @@ namespace users_service.Src.Repositories
             Console.WriteLine("-------------------------------------------------------------------------------------------------------");
 
             // Validacion: No hay usuarios activos
-            if(!users.Any()) throw new Exception("No hay usuarios registrados");
+            if(!users.Any()) throw new NotFoundException("No hay usuarios registrados");
 
             // Se retorna la lista de usuarios
             return users;
@@ -116,7 +117,7 @@ namespace users_service.Src.Repositories
             var user = _context.UsersData.Find(u => u.Id.ToString() == userId & u.IsDeleted == false);
             
             // Validacion: El usuario no existe
-            if(user == null) throw new Exception("Este usuario no existe");
+            if(user == null) throw new NotFoundException("Este usuario no existe");
             
             Console.WriteLine(string.Join("\n", _context.UsersData.Select(u => $"{u.Id} - {u.FullName} - {u.Email} - {u.NickName} - {u.PhoneNumber} - {u.IsDeleted}")));
             Console.WriteLine("-------------------------------------------------------------------------------------------------------");
@@ -138,20 +139,20 @@ namespace users_service.Src.Repositories
             // Validacion: Nombre de usuario ya registrado.
             if (users.Any(u => u.FullName == requestEditUserDto.FullName & u.Id.ToString() != userId) == true)
             {
-                throw new Exception("Este nombre ya esta registrado");
+                throw new ConflictException("Este nombre ya esta registrado");
             }
 
             // Validacion: Apodo de usuario ya registrado.
             if (users.Any(u => u.NickName == requestEditUserDto.NickName & u.Id.ToString() != userId) == true)
             {
-                throw new Exception("Este apodo ya esta registrado");
+                throw new ConflictException("Este apodo ya esta registrado");
             }
 
             // Se obtiene el usuario a editar
             var user = _context.UsersData.Find(u => u.Id.ToString() == userId & u.IsDeleted == false);
             
             // Validacion: El usuario no existe
-            if(user == null) throw new Exception("Este usuario no existe");
+            if(user == null) throw new NotFoundException("Este usuario no existe");
 
             // Se actualiza el usuario
             user.FullName = requestEditUserDto.FullName;
@@ -175,7 +176,7 @@ namespace users_service.Src.Repositories
             var user = _context.UsersData.Find(u => u.Id.ToString() == userId & u.IsDeleted == false);
             
             // Validacion: El usuario no existe
-            if(user == null) throw new Exception("Este usuario no existe");
+            if(user == null) throw new NotFoundException("Este usuario no existe");
             
             // Se realiza el soft delete del usuario
             user.IsDeleted = true;

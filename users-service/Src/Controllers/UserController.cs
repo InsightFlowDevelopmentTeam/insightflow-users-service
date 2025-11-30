@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using users_service.Src.DTOs;
+using users_service.Src.Exceptions;
 using users_service.Src.Interfaces;
 
 namespace users_service.Src.Controllers
@@ -41,6 +42,14 @@ namespace users_service.Src.Controllers
                 var user = _userRepository.CreateUser(createUserDto);
                 return Ok(user);
             }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (ConflictException ex)
+            {
+                return Conflict(new { message = ex.Message });
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, new { message = ex.Message});
@@ -58,6 +67,10 @@ namespace users_service.Src.Controllers
             {
                 var users = _userRepository.GetUsers();
                 return Ok(users);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
             }
             catch(Exception ex)
             {
@@ -77,6 +90,10 @@ namespace users_service.Src.Controllers
             {
                 var user = _userRepository.GetUserById(userId);
                 return Ok(user);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
             }
             catch(Exception ex)
             {
@@ -101,6 +118,14 @@ namespace users_service.Src.Controllers
                 var user = _userRepository.EditUser(userId, requestEditUserDto);
                 return Ok(user);
             }
+            catch(ConflictException ex)
+            {
+                return Conflict( new { message = ex.Message});
+            }
+            catch(NotFoundException ex)
+            {
+                return NotFound( new { mesage = ex.Message});
+            }
             catch(Exception ex)
             {
                 return StatusCode(500, new { message = ex.Message});
@@ -119,6 +144,10 @@ namespace users_service.Src.Controllers
             {
                 var user = _userRepository.DeleteUser(userId);
                 return Ok(user);
+            }
+            catch(NotFoundException ex)
+            {
+                return NotFound( new { message = ex.Message});
             }
             catch(Exception ex)
             {
