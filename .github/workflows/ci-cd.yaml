@@ -28,6 +28,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./users-service
+          file: ./users-service/dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/users-service:latest , ${{ secrets.DOCKERHUB_USERNAME }}/users-service:${{ github.sha }}
