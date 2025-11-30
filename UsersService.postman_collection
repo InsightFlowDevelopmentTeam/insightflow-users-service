@@ -1,0 +1,966 @@
+{
+	"info": {
+		"_postman_id": "b200a3fd-5365-4637-99b4-294ebea7e259",
+		"name": "Users Service - Workshop 3 - Arq. Sis.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37924574",
+		"_collection_link": "https://taller1-intdeswebmovil-postmna.postman.co/workspace/Taller1-IntDesWebMovil-Postmna-~57442294-81d9-4bef-837e-21ceec817dcb/collection/37924574-b200a3fd-5365-4637-99b4-294ebea7e259?action=share&source=collection_link&creator=37924574"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Carlos Arasdduco\",\r\n  \"email\": \"carlos.arssauco@insightflow.cl\",\r\n  \"nickName\": \"Carlassngas\",\r\n  \"birthDate\": \"2026-11-30T02:32:00.468Z\",\r\n  \"address\": \"string\",\r\n  \"phoneNumber\": 99999099,\r\n  \"password\": \"9~0B:f3sGA?v@FKfE%i$u<)wZ98ISzxYH~>1\\\\XMAJ)X`D58t)6uZ8u9P=g8GZc9OXw~s|lZs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}createUser",
+					"host": [
+						"{{baseUrl}}createUser"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Carlos Arauco\",\r\n  \"email\": \"carlos.arauco@insightflow.cl\",\r\n  \"nickName\": \"Carlangas\",\r\n  \"birthDate\": \"2025-11-30T02:32:00.468Z\",\r\n  \"address\": \"string\",\r\n  \"phoneNumber\": 99999999,\r\n  \"password\": \"9~0B:f3sGA?v@FKfE%i$u<)wZ98ISzxYH~>1\\\\XMAJ)X`D58t)6uZ8u9P=g8GZc9OXw~s|lZs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createUser",
+							"host": [
+								"{{baseUrl}}createUser"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 03:47:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a675cb63d34b4de-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "df85a9cf-07fb-4367"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"05ce8ea9-edc4-4369-a1a4-64eb2f5113d8\",\n    \"fullName\": \"Carlos Arauco\",\n    \"email\": \"carlos.arauco@insightflow.cl\",\n    \"nickName\": \"Carlangas\",\n    \"birthDate\": \"2025-11-30T02:32:00.468Z\",\n    \"address\": \"string\",\n    \"phoneNumber\": 99999999\n}"
+				},
+				{
+					"name": "409 Conflict",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Carlos Arauco\",\r\n  \"email\": \"carlos.arauco@insightflow.cl\",\r\n  \"nickName\": \"Carlangas\",\r\n  \"birthDate\": \"2025-11-30T02:32:00.468Z\",\r\n  \"address\": \"string\",\r\n  \"phoneNumber\": 99999999,\r\n  \"password\": \"9~0B:f3sGA?v@FKfE%i$u<)wZ98ISzxYH~>1\\\\XMAJ)X`D58t)6uZ8u9P=g8GZc9OXw~s|lZs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createUser",
+							"host": [
+								"{{baseUrl}}createUser"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 03:47:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a675d1009cab4de-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "607c8a22-a97a-498c"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Este nombre ya esta registrado\"\n}"
+				},
+				{
+					"name": "400 Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Carlos Arasdduco\",\r\n  \"email\": \"carlos.arssauco@insightflow.cl\",\r\n  \"nickName\": \"Carlassngas\",\r\n  \"birthDate\": \"2026-11-30T02:32:00.468Z\",\r\n  \"address\": \"string\",\r\n  \"phoneNumber\": 99999099,\r\n  \"password\": \"9~0B:f3sGA?v@FKfE%i$u<)wZ98ISzxYH~>1\\\\XMAJ)X`D58t)6uZ8u9P=g8GZc9OXw~s|lZs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createUser",
+							"host": [
+								"{{baseUrl}}createUser"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 03:48:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a675df5c839b4de-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "eac96b25-bab5-472a"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"La fecha de nacimiento es superior a la fecha actual\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GetUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}getUsers",
+					"host": [
+						"{{baseUrl}}getUsers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}getUsers",
+							"host": [
+								"{{baseUrl}}getUsers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 03:45:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a6759dc0825b4de-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "36b744b1-dc18-4167"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"be05cf25-a824-4faf-b92f-6da678f3f67f\",\n        \"fullName\": \"Carlos Arauco Colque\",\n        \"email\": \"carlos@insightflow.cl\",\n        \"nickName\": \"Carletto\",\n        \"birthDate\": \"2000-10-10T00:00:00\",\n        \"address\": \"Matta 24\",\n        \"phoneNumber\": 823456789\n    },\n    {\n        \"id\": \"642c205d-7393-448b-a3df-b98e5f0ab6ee\",\n        \"fullName\": \"Jhon Vallecilla\",\n        \"email\": \"jhon@insightflow.cl\",\n        \"nickName\": \"Jhon z\",\n        \"birthDate\": \"2001-10-10T00:00:00\",\n        \"address\": \"Ossa 242\",\n        \"phoneNumber\": 823416789\n    },\n    {\n        \"id\": \"51d9859f-b468-4bd9-ad1c-4c347c42bbcc\",\n        \"fullName\": \"Raul Hidalgo\",\n        \"email\": \"raul@insightflow.cl\",\n        \"nickName\": \"Rauletto\",\n        \"birthDate\": \"2000-11-10T00:00:00\",\n        \"address\": \"Bonilla 242\",\n        \"phoneNumber\": 623416789\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}getUserById/8d23ebac-5123-4569-94fe-c296f1868b",
+					"host": [
+						"{{baseUrl}}getUserById"
+					],
+					"path": [
+						"8d23ebac-5123-4569-94fe-c296f1868b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}getUserById/8d23ebac-5123-4569-94fe-c296f1868b0a",
+							"host": [
+								"{{baseUrl}}getUserById"
+							],
+							"path": [
+								"8d23ebac-5123-4569-94fe-c296f1868b0a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 02:53:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a670e70abb1f8a0-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "df57f353-69fc-4894"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8d23ebac-5123-4569-94fe-c296f1868b0a\",\n    \"fullName\": \"Carlos Arauco\",\n    \"email\": \"carlos.arauco@insightflow.cl\",\n    \"nickName\": \"Carlangas\",\n    \"birthDate\": \"2025-11-30T02:32:00.468Z\",\n    \"address\": \"string\",\n    \"phoneNumber\": 99999999\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}getUserById/8d23ebac-5123-4569-94fe-c296f1868b",
+							"host": [
+								"{{baseUrl}}getUserById"
+							],
+							"path": [
+								"8d23ebac-5123-4569-94fe-c296f1868b"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 03:45:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a675a598f8eb4de-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "debf0702-39dd-4cd0"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Este usuario no existe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "EditUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Carlos e\",\r\n  \"nickName\": \"Carlettoo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}editUser/8d23ebac-5123-4569-94fe-c296f1868b",
+					"host": [
+						"{{baseUrl}}editUser"
+					],
+					"path": [
+						"8d23ebac-5123-4569-94fe-c296f1868b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Carlungas\",\r\n  \"nickName\": \"Carlettoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}editUser/8d23ebac-5123-4569-94fe-c296f1868b0a",
+							"host": [
+								"{{baseUrl}}editUser"
+							],
+							"path": [
+								"8d23ebac-5123-4569-94fe-c296f1868b0a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 02:54:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a670f3e3c34f8a0-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "9763c9cb-0570-46ac"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8d23ebac-5123-4569-94fe-c296f1868b0a\",\n    \"fullName\": \"Carlungas\",\n    \"email\": \"carlos.arauco@insightflow.cl\",\n    \"nickName\": \"Carlettoo\",\n    \"birthDate\": \"2025-11-30T02:32:00.468Z\",\n    \"address\": \"string\",\n    \"phoneNumber\": 99999999\n}"
+				},
+				{
+					"name": "409 Conflict",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Carlos Arauco Colque\",\r\n  \"nickName\": \"Carlettoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}editUser/8d23ebac-5123-4569-94fe-c296f1868b0a",
+							"host": [
+								"{{baseUrl}}editUser"
+							],
+							"path": [
+								"8d23ebac-5123-4569-94fe-c296f1868b0a"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 03:44:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a67589358b1b4de-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "34b941bb-75dc-4cf1"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Este nombre ya esta registrado\"\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Carlos e\",\r\n  \"nickName\": \"Carlettoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}editUser/8d23ebac-5123-4569-94fe-c296f1868b",
+							"host": [
+								"{{baseUrl}}editUser"
+							],
+							"path": [
+								"8d23ebac-5123-4569-94fe-c296f1868b"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 03:46:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a675b756b78b4de-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "0d65518c-432c-4e6b"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mesage\": \"Este usuario no existe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}deleteUser/8d23ebac-5123-4569-94fe-c296f1868b",
+					"host": [
+						"{{baseUrl}}deleteUser"
+					],
+					"path": [
+						"8d23ebac-5123-4569-94fe-c296f1868b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Ok",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}deleteUser/8d23ebac-5123-4569-94fe-c296f1868b0a",
+							"host": [
+								"{{baseUrl}}deleteUser"
+							],
+							"path": [
+								"8d23ebac-5123-4569-94fe-c296f1868b0a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 02:54:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a670f890ccff8a0-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "e86b1638-714f-412e"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8d23ebac-5123-4569-94fe-c296f1868b0a\",\n    \"fullName\": \"Carlungas\",\n    \"email\": \"carlos.arauco@insightflow.cl\",\n    \"nickName\": \"Carlettoo\",\n    \"birthDate\": \"2025-11-30T02:32:00.468Z\",\n    \"address\": \"string\",\n    \"phoneNumber\": 99999999\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}deleteUser/8d23ebac-5123-4569-94fe-c296f1868b",
+							"host": [
+								"{{baseUrl}}deleteUser"
+							],
+							"path": [
+								"8d23ebac-5123-4569-94fe-c296f1868b"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 30 Nov 2025 03:43:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9a67573838dee7a5-SCL"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "3de2e7de-38ea-4714"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Este usuario no existe\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": ""
+		}
+	]
+}
