@@ -12,7 +12,7 @@ namespace users_service.Src.Data
                 {
                     new User
                     {
-                        Id = Guid.NewGuid(),
+                        Id = Guid.Parse("a08799f8-746f-46b4-8134-2ef211fe705a"),
                         FullName = "Carlos Arauco Colque",
                         Email = "carlos@insightflow.cl",
                         NickName = "Carletto",
@@ -24,7 +24,7 @@ namespace users_service.Src.Data
                     },
                     new User
                     {
-                        Id = Guid.NewGuid(),
+                        Id = Guid.Parse("9fd8ec52-3aa4-4097-86fa-2c576bc06e01"),
                         FullName = "Jhon Vallecilla",
                         Email = "jhon@insightflow.cl",
                         NickName = "Jhon z",
@@ -36,7 +36,7 @@ namespace users_service.Src.Data
                     },
                     new User
                     {
-                        Id = Guid.NewGuid(),
+                        Id = Guid.Parse("2db519ca-4836-4e01-977f-ec518a081d54"),
                         FullName = "Raul Hidalgo",
                         Email = "raul@insightflow.cl",
                         NickName = "Rauletto",
