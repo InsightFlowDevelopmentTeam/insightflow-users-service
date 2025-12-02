@@ -23,6 +23,7 @@ namespace users_service.Src.Mappers
                 NickName = user.NickName,
                 BirthDate = user.BirthDate,
                 Address = user.Address,
+                Role = user.Role,
                 PhoneNumber = user.PhoneNumber,
             };
         }

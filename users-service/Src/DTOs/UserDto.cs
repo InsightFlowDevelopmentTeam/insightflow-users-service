@@ -30,6 +30,10 @@ namespace users_service.Src.DTOs
         /// </summary>
         public string Address { get; set; } = string.Empty;
         /// <summary>
+        /// Rol del usuario
+        /// </summary>
+        public string Role { get; set; } = string.Empty;
+        /// <summary>
         /// Número de telefono del usuario
         /// </summary>
         public int PhoneNumber { get; set; }

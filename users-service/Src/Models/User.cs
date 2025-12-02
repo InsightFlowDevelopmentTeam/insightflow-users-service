@@ -40,6 +40,10 @@ namespace users_service.Src.Models
         /// </summary>
         public string Password { get; set; } = string.Empty;
         /// <summary>
+        /// Rol del usuario
+        /// </summary>
+        public string Role { get; set; } = "USER";
+        /// <summary>
         /// Indicador de usuario eliminado
         /// </summary>
         public bool IsDeleted { get; set; }

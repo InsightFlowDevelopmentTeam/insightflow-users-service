@@ -20,6 +20,7 @@ namespace users_service.Src.Data
                         Address = "Matta 24",
                         PhoneNumber = 823456789,
                         Password = "Carlos123.",
+                        Role = "ADMIN",
                         IsDeleted = false
                     },
                     new User
@@ -32,6 +33,7 @@ namespace users_service.Src.Data
                         Address = "Ossa 242",
                         PhoneNumber = 823416789,
                         Password = "Jhon123.",
+                        Role = "USER",
                         IsDeleted = false        
                     },
                     new User
@@ -44,6 +46,7 @@ namespace users_service.Src.Data
                         Address = "Bonilla 242",
                         PhoneNumber = 623416789,
                         Password = "Raul123.",
+                        Role = "USER",
                         IsDeleted = false        
                     }
                 });
