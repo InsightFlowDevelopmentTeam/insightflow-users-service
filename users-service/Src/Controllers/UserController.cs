@@ -9,7 +9,7 @@ namespace users_service.Src.Controllers
     /// Controller del usuario
     /// </summary>
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("user/[controller]")]
     public class UserController : ControllerBase
     {
         /// <summary>

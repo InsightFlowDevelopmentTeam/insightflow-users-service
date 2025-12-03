@@ -5,6 +5,8 @@ using users_service.Src.Interfaces;
 
 namespace users_service.Src.Controllers
 {
+    [ApiController]
+    [Route("auth/[Controller]")]
     public class AuthController : ControllerBase
     {
         /// <summary>
