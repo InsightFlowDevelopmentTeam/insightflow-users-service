@@ -37,11 +37,5 @@ namespace users_service.Src.Interfaces
         /// <param name="userId">Id del usuario</param>
         /// <returns>Retorna el usuario eliminado</returns>
         UserDto DeleteUser(string userId);
-        /// <summary>
-        /// Metodo para logear a un usuario
-        /// </summary>
-        /// <param name="requestLoginDto">Datos necesarios para el login</param>
-        /// <returns>Retorna un JWT</returns>
-        string Login(RequestLoginDto requestLoginDto);
     }
 }

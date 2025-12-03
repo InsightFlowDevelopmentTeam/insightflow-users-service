@@ -188,17 +188,5 @@ namespace users_service.Src.Repositories
             // Se retorna el usuario eliminado
             return user.ToDtoFromUser();        
         }
-
-        public string Login(RequestLoginDto requestLoginDto)
-        {
-            // Buscar al usuario
-            var user = _context.UsersData.Find(u => u.Email == requestLoginDto.Email);
-            
-            // Validacion: Credenciales invalidas
-            if(user == null) throw new BadRequestException("Credenciales invalidas");
-            if(user.Password != requestLoginDto.Password) throw new BadRequestException("Credenciales invalidas");
-
-            return "JWT";
-        } 
     }
 }
