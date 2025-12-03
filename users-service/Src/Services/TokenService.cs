@@ -9,6 +9,9 @@ using users_service.Src.Models;
 
 namespace users_service.Src.Services
 {
+    /// <summary>
+    /// Servicio del Token
+    /// </summary>
     public class TokenService : ITokenService
     {
         private readonly SymmetricSecurityKey _key;
@@ -17,7 +20,12 @@ namespace users_service.Src.Services
             var signingkey = Environment.GetEnvironmentVariable("JWT_SIGNING_KEY") ?? throw new ArgumentNullException("JWT Signing key no existe");
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingkey));
         }
-
+        
+        /// <summary>
+        /// Metodo para crear un token
+        /// </summary>
+        /// <param name="user">Datos del usuario</param>
+        /// <returns>Retorna JWT</returns>
         public string CreateToken(User user)
         {
             // Crear claims

@@ -1,5 +1,8 @@
 namespace users_service.Src.DTOs
 {
+    /// <summary>
+    /// Dto de peticion para logear un usuario
+    /// </summary>
     public class RequestLoginDto
     {
         /// <summary>

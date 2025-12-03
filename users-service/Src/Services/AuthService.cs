@@ -5,6 +5,9 @@ using users_service.Src.Interfaces;
 
 namespace users_service.Src.Services
 {
+    /// <summary>
+    /// Servicio de Autenticacion
+    /// </summary>
     public class AuthService : IAuthService
     {
         /// <summary>
