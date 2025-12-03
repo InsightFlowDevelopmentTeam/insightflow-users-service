@@ -27,8 +27,7 @@ namespace users_service.Src.Services
                 new Claim(JwtRegisteredClaimNames.GivenName, user.FullName),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.Role, "ADMIN"),
-                new Claim(ClaimTypes.Role, "USER")
+                new Claim(ClaimTypes.Role, user.Role)
             };
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);

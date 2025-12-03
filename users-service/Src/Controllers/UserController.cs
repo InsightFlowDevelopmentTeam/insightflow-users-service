@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using users_service.Src.DTOs;
 using users_service.Src.Exceptions;
@@ -60,6 +61,7 @@ namespace users_service.Src.Controllers
         /// Endpoint para obtener los usuarios
         /// </summary>
         /// <returns>Retorna los usuarios activos</returns>
+        [Authorize(Roles = "ADMIN")]
         [HttpGet("/getUsers")]
         public IActionResult GetUsers()
         {
@@ -83,6 +85,7 @@ namespace users_service.Src.Controllers
         /// </summary>
         /// <param name="userId">Id del usuario</param>
         /// <returns>Retorna el usuario</returns>
+        [Authorize(Roles = "USER, ADMIN")]
         [HttpGet("/getUserById/{userId}")]
         public IActionResult GetUserById([FromRoute] string userId)
         {
@@ -107,6 +110,7 @@ namespace users_service.Src.Controllers
         /// <param name="userId">Id del usuario</param>
         /// <param name="requestEditUserDto">Datos necesarios para editar el usuario</param>
         /// <returns>Retorna el usuario editado</returns>
+        [Authorize(Roles = "USER, ADMIN")]
         [HttpPut("/editUser/{userId}")]
         public IActionResult EditUser([FromRoute] string userId, [FromBody] RequestEditUserDto requestEditUserDto)
         {
@@ -137,6 +141,7 @@ namespace users_service.Src.Controllers
         /// </summary>
         /// <param name="userId">Id del usuario</param>
         /// <returns>Retorna usuario eliminado</returns>
+        [Authorize(Roles = "ADMIN")]
         [HttpDelete("/deleteUser/{userId}")]
         public IActionResult DeleteUser([FromRoute] string userId)
         {
