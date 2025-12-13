@@ -32,7 +32,7 @@ namespace users_service.Src.Services
         public string Login(RequestLoginDto requestLoginDto)
         {
             // Buscar al usuario
-            var user = _context.UsersData.Find(u => u.Email == requestLoginDto.Email);
+            var user = _context.UsersData.Find(u => u.Email == requestLoginDto.Email & u.IsDeleted == false);
             
             // Validacion: Credenciales invalidas
             if(user == null) throw new BadRequestException("Credenciales invalidas");
